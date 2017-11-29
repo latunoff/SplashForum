@@ -1,0 +1,39 @@
+#reply-container {
+    padding: 10px 100px;
+    /* background-color: ivory; */
+    border-radius: 2%;
+}
+
+#signature {
+    padding-left: 10px;
+}
+
+.list-group-item {
+    margin: 5px;
+}
+
+.card {
+    border: 3px solid dimgray;
+    padding: 10px;
+    border-radius: 1%;
+}
+
+.card-header {
+    background-color: black;
+    color: white;
+}
+
+.reply {
+    display: flex;
+    border-top: 1px solid lightgray;    
+}
+
+.reply-body {
+    padding: 10px 0 0 40px;
+}
+
+.avatar {
+    width: 70px;
+    height: auto;
+}
+

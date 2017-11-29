@@ -1,0 +1,41 @@
+<div *ngIf="user === null || user === 'null'" id='login-container'>
+  <h1>{{ 'login.welcome' | translate }}</h1>
+  <hr>
+  <h3>{{ 'login.exist_user' | translate }}</h3>
+  <!-- <form action='/existinguser' method='POST'> -->
+    <div *ngIf="invalidUser.toggle" id='warning'> {{ invalidUser.warning }} </div>    
+    <div class="form-group">
+      <label for="email">{{ 'login.email' | translate }}</label>
+      <input [(ngModel)]='existingUser.email' type="text" class="form-control form-control-lg" id="email" placeholder="Enter E-mail">
+    </div>
+    <div class="form-group">
+      <label for="password">{{ 'login.password' | translate }}</label>
+      <input [(ngModel)]='existingUser.password' type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+    </div>
+    <button (click)='loginExisting()' type="submit" class="btn btn-lg btn-primary">{{ 'menu.sign_in' | translate }}</button>
+  <!-- </form> -->
+  <hr>
+  <h3>{{ 'login.new_user' | translate }}</h3>
+  <!-- <form action='/newuser' method='POST'> -->
+    <div *ngIf="invalidName.toggle" id='warning'> {{ invalidName.warning }} </div>    
+    <div class="form-group">
+      <label for="email">{{ 'login.email' | translate }}</label>
+      <input [(ngModel)]='newUser.email' type="text" class="form-control form-control-lg" id="email" placeholder="Enter E-Mail">
+    </div>
+    <div *ngIf="invalidPassword.toggle" id='warning'> {{ invalidPassword.warning }} </div>
+    <div class="form-group">
+      <label for="newPassword1">{{ 'login.password' | translate }}</label>
+      <input [(ngModel)]='newUser.password1' type="password" class="form-control form-control-lg" id="newPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="newPassword2">{{ 'login.password' | translate }}</label>
+      <input [(ngModel)]='newUser.password2' type="password" class="form-control form-control-lg" id="newPassword2" placeholder="Re-Enter Password">
+    </div>
+    <button (click)='loginNew()' type="submit" class="btn btn-lg btn-primary">{{ 'login.register' | translate }}</button>
+  <!-- </form> -->
+  <hr>
+  <h3>{{ 'login.guest' | translate }}</h3>
+  <!-- <form action='/guest' method='POST'> -->
+    <button (click)='loginGuest()' type="submit" class="btn btn-lg btn-primary">{{ 'login.guest_signin' | translate }}</button>
+  <!-- </form> -->
+</div>

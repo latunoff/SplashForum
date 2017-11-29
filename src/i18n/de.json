@@ -1,0 +1,28 @@
+{
+    "site": {
+        "title": "Splash Forum",
+        "languages":"Sprachen"
+    },
+    "menu": {
+        "home": "Home",
+        "new_post": "Neu Post",
+        "sign_out": "Sign out",
+        "sign_in": "Sign in"
+    },
+    "login": {
+        "welcome": "Wilkomen. Bitte wachle ihre Sign In weg",
+        "exist_user": "Existierender Benutzer",
+        "new_user": "Neuer Benutzer",
+        "register": "Registeren Benutzer",
+        "guest": "Gast",
+        "guest_signin": "Sign in wie Gast",
+        "email": "E-Mail",
+        "password": "Kenntwort"
+    },
+    "post": {
+        "title": "Title",
+        "date": "Datum",
+        "replies": "Antworten",
+        "autor": "Autor"
+    }
+}

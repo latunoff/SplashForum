@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    /* background-color: rgb(249, 247, 242); */
+}
+.btn {
+    cursor: pointer;
+}
+i.fa {
+    color: #0275d8;
+}

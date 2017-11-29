@@ -1,0 +1,22 @@
+#login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    width: 200px;
+}
+
+label {
+    display: none;
+}
+
+#warning {
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" [routerLink]="['/']">
+    <i class="fa fa-group fa-lg"></i>
+  </a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" [routerLink]="['/']" [class.active]="isActive('/')"> <i class="fa fa-home fa-lg"></i> {{ 'menu.home' | translate }} |</a>
+      <a *ngIf="loggedIn" class="nav-item nav-link" [routerLink]="['/new']" [class.active]="isActive('/new')"> <i class="fa fa-plus fa-lg"></i> {{ 'menu.new_post' | translate }}</a>      
+      <a *ngIf="!loggedIn" class="nav-item nav-link" [routerLink]="['/login']"> <i class="fa fa-plus fa-lg"></i> {{ 'menu.new_post' | translate }}</a>
+      <a *ngIf="loggedIn" class="nav-item nav-link" [routerLink]="['/user']" [class.active]="isActive('/user')"> <i class="fa fa-user fa-lg"></i> {{ user }} </a>
+      <a *ngIf="loggedIn" class="nav-item nav-link" (click)="logout()"> <i class="fa fa-sign-out fa-lg"></i> {{ 'menu.sign_out' | translate }}</a>
+      <a *ngIf="!loggedIn" class="nav-item nav-link" [routerLink]="['/login']"> <i class="fa fa-sign-in fa-lg"></i> {{ 'menu.sign_in' | translate }}</a>
+    </div>
+    <div class="navbar-right">
+<!--
+      <div style="padding-top:15px;padding-right:5px;">
+        <label><span style="color:white">{{ 'header.select' | translate }}</span>
+          <select #langSelect (change)="translate.use(langSelect.value)">
+              <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+        </select>
+        </label>
+      </div>
+-->
+      <div class="dropdown languages">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-language fa-lg"></i> {{ 'site.languages' | translate }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="language">
+          <a *ngFor='let lang of langs' class="dropdown-item" href="#"
+            (click)="langChange(lang.link)"
+            [class.selected]="lang.link === translate.currentLang">{{ lang.name }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

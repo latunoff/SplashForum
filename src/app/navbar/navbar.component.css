@@ -1,0 +1,9 @@
+.navbar-nav .nav-item{
+    cursor: pointer;
+}
+.navbar-right{
+    margin-left: auto;
+}
+.languages a.selected{
+    color: #11f;
+}
